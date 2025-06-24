@@ -1,0 +1,653 @@
+/* === GLOBAL RESET === */
+
+/* style.css */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body, html {
+  height: 100%;
+  background-color: #f9c46a;
+  color: #333;
+  overflow: hidden;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: #f9c46a;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.frame-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  margin-top: 80px;
+}
+
+.frames {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.8s ease-in-out;
+}
+
+.frame {
+  width: 100%;
+  height: 100vh;
+  padding: 70px 60px 60px 60px;
+  overflow-y: auto;
+  flex-shrink: 0;
+}
+
+.frame-home {
+  background-color: #f9c46a;
+}
+
+.frame-materi {
+  background-color: #fff3e0;
+}
+
+.frame-jobsheet {
+  background-color: #83b4d9;
+  color: white;
+}
+
+.frame-profil {
+  background-color: #7994a5;
+  color: white;
+}
+
+main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 80px;
+  height: calc(100vh - 200px);
+  padding: 0 60px;
+  box-sizing: border-box;
+}
+
+.main-text {
+  max-width: 600px;
+  color: #ffffff;
+  margin-top: 0px;
+}
+
+.explore {
+  font-family: 'Pacifico', cursive;
+  font-size: 48px;
+  margin-bottom: 12px;
+  color: #f72904;
+  font-weight: normal;
+  letter-spacing: 1px;
+}
+
+.main-text h2 {
+  font-size: 26px;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.main-text p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #ffffff;
+}
+
+.plant {
+  width: 700px;
+  height: auto;
+  object-fit: contain;
+}
+
+.logo {
+  width: 55px;
+  height: auto;
+  object-fit: contain;
+  margin-left: 10px;
+}
+
+.login-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 10px 20px;
+  font-family: inherit;
+  margin: 0 30px;
+  text-decoration: none;
+}
+
+.login-btn:hover {
+  border-radius: 20px;
+  background-color: orange;
+  color: black;
+}
+.logo-blpt {
+  display: flex;
+  align-items: center;     /* sejajarkan vertikal logo dan teks */
+}
+.logo-text, .logo-text1 {
+  font-weight: bold;
+  color: white;
+  white-space: nowrap;
+}
+.logo-text-group {
+  display: flex;
+  flex-direction: column;  /* teks atas-bawah */
+  margin-left: 10px;
+}
+.logo-text {
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+.logo-text1 {
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+.materi-section {
+  padding: 120px 30px;
+  background: #fff;
+  text-align: center;
+}
+
+.materi-title {
+  font-size: 28px;
+  margin-bottom: 40px;
+  color: #444;
+  font-weight: bold;
+  border-bottom: 2px solid #ccc;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.materi-container {
+  display: flex;
+  justify-content: center;
+  gap: 150px;
+  flex-wrap: wrap;
+}
+
+.materi-card {
+  width: 250px;
+  border-radius: 10px;
+  background: #fafafa;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.materi-card:hover {
+  transform: translateY(-8px);
+}
+
+.materi-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border-radius: 50%;
+}
+
+.materi-sub {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.materi-desc {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+}
+
+.jobsheet-section {
+  padding: 120px 30px;
+  background: #fff3e0;
+  text-align: center;
+}
+
+.jobsheet-title {
+  font-size: 28px;
+  margin-bottom: 40px;
+  color: #444;
+  font-weight: bold;
+  border-bottom: 2px solid #ccc;
+  display: inline-block;
+  padding-bottom: 10px;
+}
+
+.jobsheet-container {
+  display: flex;
+  justify-content: center;
+  gap: 150px;
+  flex-wrap: wrap;
+}
+
+.jobsheet-card {
+  width: 250px;
+  border-radius: 10px;
+  background: #fafafa;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.jobsheet-card:hover {
+  transform: translateY(-8px);
+}
+
+.jobsheet-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border-radius: 50%;
+}
+
+.jobsheet-sub {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.jobsheet-desc {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+}
+
+.profil-section {
+  padding: 60px 40px;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #ffffff;
+  color: #333;
+}
+
+.profil-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.profil-header h2 {
+  font-size: 36px;
+  color: #00bcd4;
+}
+
+.profil-header p {
+  font-size: 16px;
+  color: #555;
+}
+
+.profil-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.profil-details, .profil-about, .profil-card {
+  flex: 1;
+  min-width: 250px;
+}
+
+.profil-details h3,
+.profil-about h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #111;
+}
+
+.profil-details p,
+.profil-about p {
+  margin: 8px 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.social-icons {
+  margin-top: 10px;
+}
+
+.social-icons a {
+  margin-right: 10px;
+  color: #333;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  color: #00bcd4;
+}
+
+.contact-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: 2px solid #00bcd4;
+  background: none;
+  color: #00bcd4;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.contact-btn:hover {
+  background: #00bcd4;
+  color: white;
+}
+
+.profil-card {
+  background: #f2613f;
+  color: white;
+  width: 300px;
+  border-radius: 12px;
+  text-align: center;
+  position: relative;
+  padding-top: 60px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin: auto;
+}
+
+.profil-card-photo {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.profil-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Gambar tidak terpotong */
+  background-color: white; /* Isi ruang kosong dengan putih */
+}
+
+.profil-card-body {
+  padding: 70px 20px 30px;
+}
+
+.profil-card-body h4 {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+  line-height: 1.4;
+}
+
+.profil-card-body p {
+  font-size: 14px;
+  margin: 0 0 20px;
+  line-height: 1.5;
+}
+
+.social-icons.white a {
+  color: white;
+  margin: 0 8px;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.social-icons.white a:hover {
+  color: #ffe0b2;
+}
+
+/* === SUBFRAME STYLE === */
+.subframe {
+  position: fixed;
+  top: 0;
+  left: 100%; /* Mulai di luar layar */
+  width: 100%;
+  height: 100vh;
+  background-color: white;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Saat subframe aktif */
+.subframe.show {
+  transform: translateX(-100%);
+}
+
+/* Header */
+.subframe-header {
+  background-color: #f9c46a;
+  padding: 15px;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  flex-shrink: 0;
+  height: 60px;
+}
+
+/* Body (tempat iframe) */
+.subframe-body {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+}
+
+.subframe-body iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Tombol Kembali */
+.subframe-back {
+  background-color: #f9c46a;
+  border: none;
+  color: black;
+  padding: 10px 25px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  margin: 10px auto 20px;
+  flex-shrink: 0;
+}
+
+.subframe.jobsheet {
+  background-color: #e0f7fa;
+}
+
+
+@media screen and (max-width: 768px)  {
+    .intro-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .intro-text, .intro-image {
+    max-width: 100%;
+  }
+}
+
+/* HP kecil */
+@media screen and (max-width: 480px) {
+.logo {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.logo-text { font-size: 12px; top: 5%; left: 18% }
+.logo-text1 { font-size: 12px; top: 6.8%; left: 18%;}
+.login-btn {
+  padding: 5px;
+  background-color: #5a46e5;
+  color: white;
+  border: none;
+  border-radius:10x;
+  font-weight: bold;
+  cursor: pointer;
+}
+/*.iot-image {
+width: 100%;
+height: auto;
+
+}
+/* login page */
+.graphics {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.graphics img {
+  width: 100%;
+  max-width: 480px;
+  max-height: 480px;
+}
+
+.graphics-text {
+  font-size: 15px;
+  font-weight: bold;
+  color: #fff;
+  margin-top: 20px;
+}
+
+.graphics-text1 {
+  font-size: 15px;
+  font-weight: bold;
+  color: #fff;
+}
+  .left-panel {
+    border-radius: 0px;
+  }
+  .right-panel {
+    padding: 0px; /* Kurangi padding agar tidak mepet */
+    width: 100%;
+  }
+
+  .form-box {
+    max-width: 80%; /* Supaya benar-benar fleksibel */
+    padding: 0px;  /* Tambahkan sedikit padding dalam */
+  }
+
+  .form-box h2 {
+    font-size: 20px; /* Kecilkan sedikit supaya muat */
+  }
+
+  .login-form input,
+  .login-form button {
+    font-size: 14px; /* Sesuaikan font agar muat */
+    padding: 10px;
+  }
+  /* Menu Grid */
+  .logo-text2 { font-size: 20px; top: 6%; left: 22%}
+
+  .menu-title {
+  font-size: 28px;
+  font-weight: bold;
+  margin:40px;
+}
+  .menu-main {
+  text-align: center;
+  max-width: 480px;
+  width: 100%;
+  left:0.2%;
+  position: relative;
+  z-index: 3;
+  padding: 0px;
+}
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap:15px;
+  padding: 10px;
+  justify-content: center;
+}
+
+.menu-item {
+  background-color: #dedbdb;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* <-- Pusatkan isi ke tengah horizontal */
+  text-align: center;  /* <-- Pusatkan teks di dalam */
+}
+
+
+/* Menu Petunjuk */
+    .sidebar1-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: rgba(0,0,0,0.4);
+      display: none;
+      z-index: 999;
+    }
+
+    .sidebar1 {
+      position: fixed;
+      top: 0;
+      left: -260px;
+      width: 260px;
+      height: 100vh;
+      background-color: #ffffff;
+      padding: 20px;
+      box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+      transition: left 0.3s ease;
+      z-index: 1000;
+    }
+
+    .sidebar1.show {
+      left: 0;
+    }
+
+    .sidebar1-overlay.show {
+      display: block;
+    }
+
+  .hamburger {
+    display: block;
+  }
+
+
+  /* Konten utama jadi full saat sidebar disembunyikan */
+  .main-layout {
+    flex-direction: column;
+  }
+
+/*Menu Materi */
+
+  .iot-image1 {
+width: 100%;
+height: auto;
+
+  }
+}
+
+

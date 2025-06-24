@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Modul IoT</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+  <header>
+    <div class="logo-blpt">
+      <img src="png/logo-DIY-1.png" alt="Logo" class="logo">
+      <div class="logo-text-group">
+      <span class="logo-text">Balai Latihan Pendidikan Teknik</span>
+      <span class="logo-text1">Daerah Istimewa Yogyakarta</span>
+    </div>
+    </div>
+    <nav>
+      <button class="login-btn" onclick="scrollToFrame(0)">Home</button>
+      <button class="login-btn" onclick="scrollToFrame(1)">Materi</button>
+      <button class="login-btn" onclick="scrollToFrame(2)">Jobsheet</button>
+      <button class="login-btn" onclick="scrollToFrame(3)">Profil</button>
+    </nav>
+  </header>
+
+  <div class="frame-wrapper">
+    <div class="frames" id="frames">
+      <div class="frame frame-home" id="frame-home">
+        <main>
+          <div class="main-text">
+            <h1 class="explore">Explore IoT</h1>
+            <h2>Empowering a more intelligent technological world!</h2>
+            <p>Step into a smart world where devices communicate, automate, and innovate — bringing technology closer to your daily life.</p>
+          </div>
+          <img src="png/Orang.png" alt="plant" class="plant">
+        </main>
+      </div>
+
+      <div class="frame frame-materi" id="frame-materi">
+        <section class="materi-section">
+          <h2 class="materi-title">Materi Pilihan</h2>
+          <div class="materi-container">
+            <div class="materi-card" onclick="showSubFrame('blynk')">
+              <img src="png/blynk2.jpg" alt="Blynk" class="materi-img">
+              <h3 class="materi-sub">Blynk</h3>
+              <div class="materi-desc">Platform IoT berbasis cloud yang memudahkan pengendalian perangkat melalui aplikasi mobile.</div>
+            </div>
+            <div class="materi-card" onclick="showSubFrame('mqtt')">
+              <img src="png/mqtt.jpg" alt="MQTT" class="materi-img">
+              <h3 class="materi-sub">MQTT</h3>
+              <div class="materi-desc">Protokol komunikasi ringan yang dirancang untuk pengiriman data IoT secara efisien.</div>
+            </div>
+            <div class="materi-card" onclick="showSubFrame('thingspeak')">
+              <img src="png/thingspeak.png" alt="ThingSpeak" class="materi-img">
+              <h3 class="materi-sub">ThingSpeak</h3>
+              <div class="materi-desc">Layanan IoT yang memungkinkan visualisasi data sensor secara real-time melalui web.</div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="frame frame-jobsheet" id="frame-jobsheet">
+        <section class="jobsheet-section">
+          <h2 class="jobsheet-title">Jobsheet Praktikum</h2>
+          <div class="jobsheet-container">
+            <div class="jobsheet-card"onclick="showSubFrame('jobsheet-blynk')">
+              <img src="png/blynk2.jpg" alt="Jobsheet 1" class="jobsheet-img">
+              <h3 class="jobsheet-sub">Blynk</h3>
+              <div class="jobsheet-desc">Panduan langkah demi langkah untuk mengontrol perangkat IoT menggunakan aplikasi Blynk.</div>
+            </div>
+            <div class="jobsheet-card" onclick="showSubFrame('jobsheet-mqtt')">
+              <img src="png/mqtt.jpg" alt="Jobsheet 2" class="jobsheet-img">
+              <h3 class="jobsheet-sub">MQTT</h3>
+              <div class="jobsheet-desc">Instruksi praktikum mengirim dan menerima data sensor menggunakan protokol MQTT.</div>
+            </div>
+            <div class="jobsheet-card"onclick="showSubFrame('jobsheet-thingspeak')">
+              <img src="png/thingspeak.png" alt="Jobsheet 3" class="jobsheet-img">
+              <h3 class="jobsheet-sub">ThingSpeak</h3>
+              <div class="jobsheet-desc">Latihan koneksi dan visualisasi data sensor secara real-time menggunakan ThingSpeak.</div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="frame frame-profil" id="frame-profil">
+      <section class="profil-section">
+        <div class="profil-header">
+          <h2>Profile</h2>
+          <p>I'm a creative webdeveloper</p>
+        </div>
+
+        <div class="profil-content">
+          <!-- Bagian kiri: Detail -->
+          <div class="profil-details">
+            <h3>Details</h3>
+            <p><strong>Name:</strong> Venera</p>
+            <p><strong>Age:</strong> 23 years</p>
+            <p><strong>Location:</strong> Yogyakarta, Indonesia</p>
+            <div class="social-icons">
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+
+          <!-- Bagian tengah: Tentang Saya -->
+          <div class="profil-about">
+            <h3>About me</h3>
+            <p>
+              Saya adalah mahasiswa yang tertarik dalam pengembangan teknologi, khususnya Internet of Things. Berpengalaman dalam membuat modul pelatihan dan aplikasi berbasis mikrokontroler.
+            </p>
+            <p>
+              Aktif dalam proyek pengembangan e-modul dan pengajaran digital berbasis cloud.
+            </p>
+            <button class="contact-btn">Contact Me</button>
+          </div>
+                        <!-- Bagian kanan: Kartu foto -->
+              <div class="profil-card">
+                <div class="profil-card-photo">
+                  <img src="png/ven.png" alt="Foto Profil" class="profil-photo">
+                </div>
+                <div class="profil-card-body">
+                  <h4>HELLO, I'M Venera Belista Herdiani</h4>
+                  <p>Saya adalah pengembang e-modul yang siap berkolaborasi dalam proyek pengajaran dan teknologi.</p>
+                  <div class="social-icons white">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                  </div>
+                </div>
+              </div>
+        </div>
+      </section>
+      </div>
+    </div>
+      <div class="subframe" id="subframe-blynk">
+        <div class="subframe-header">Blynk</div>
+        <div class="subframe-body">
+            <iframe src="pdf/materi_blynk.pdf"></iframe>
+            </div>
+          <button  onclick="closeSubFrames()">Kembali</button>
+        </div>
+
+        <div class="subframe" id="subframe-mqtt">
+          <div class="subframe-header">MQTT</div>
+          <div class="subframe-body">
+            <iframe src="pdf/materi_mqtt.pdf"></iframe>
+            </div>
+          <button onclick="closeSubFrames()">Kembali</button>
+        </div>
+
+        <div class="subframe" id="subframe-thingspeak">
+          <div class="subframe-header">ThingSpeak</div>
+          <div class="subframe-body">
+            <iframe src="pdf/materi_thingspeak.pdf"></iframe>
+            </div>
+          <button onclick="closeSubFrames()">Kembali</button>
+        </div>
+
+      <div class="subframe" id="subframe-jobsheet-blynk">
+        <div class="subframe-header">Jobsheet Blynk</div>
+        <div class="subframe-body">
+          <iframe src="pdf/jobsheet_blynk.pdf"></iframe>
+        </div>
+        <button onclick="closeSubFrames()">Kembali</button>
+      </div>
+      <div class="subframe" id="subframe-jobsheet-mqtt">
+        <div class="subframe-header">Jobsheet MQTT</div>
+        <div class="subframe-body">
+          <iframe src="pdf/jobsheet_mqtt.pdf"></iframe>
+        </div>
+        <button onclick="closeSubFrames()">Kembali</button>
+      </div>
+        <div class="subframe" id="subframe-jobsheet-thingspeak">
+          <div class="subframe-header">Jobsheet ThingSpeak</div>
+          <div class="subframe-body">
+            <iframe src="pdf/jobsheet_thingspeak.pdf"></iframe>
+          </div>
+          <button onclick="closeSubFrames()">Kembali</button>
+        </div>
+  </div>
+</body>
+</html>
